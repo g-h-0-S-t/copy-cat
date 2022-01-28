@@ -24,6 +24,7 @@ javascript:
 
     (function(window) {
         var tab = window.open('about:blank', '_blank');
+        tab.document.write('<h1><a id="copy-cat" download="Download.html">Download as HTML</a></h1><br>');
         tab.document.write(document.body.outerHTML);
-        tab.document.write('<br><a download="Download.html" href="data:text/html;base64,' + btoa(unescape(encodeURIComponent(tab.document.documentElement.innerHTML))) + '">Download this List</a>');
+        tab.document.getElementById('copy-cat').href = 'data:text/html;base64,' + btoa(unescape(encodeURIComponent(tab.document.documentElement.innerHTML)));
     })(window);
